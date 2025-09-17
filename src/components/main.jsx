@@ -1,11 +1,14 @@
 import React from 'react';
+import AuthComponent from './HOCComponent';
 
-function Main() {
+function Main({ title, user }) {
   return (
     <div>
-      <h1>Hello, this is Main Component!</h1>
+      <h1>{title}</h1>
+      <p>Welcome, {user}!</p>
     </div>
   );
 }
 
-export default Main;
+// Wrap Main with AuthComponent before exporting
+export default AuthComponent(Main);
