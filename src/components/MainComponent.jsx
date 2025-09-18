@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Main() {
+function MainComponent() {
   return (
     <div>
       <h1>Hello, this is Main Component!</h1>
@@ -8,4 +8,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainComponent;
