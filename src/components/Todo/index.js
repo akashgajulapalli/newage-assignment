@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback, useContext } from "react";
-import { ThemeContext } from "./../../App";
+import ThemeContext from "./../../contexts/ThemeProvider"; // import the context
 
 function Todo() {
     const [todos, setTodos] = useState([]);
@@ -7,11 +7,11 @@ function Todo() {
 
     const inputRef = useRef(null);
 
-    const { theme, setTheme } = useContext(ThemeContext);
+    // ✅ use the context
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
     useEffect(() => {
         inputRef.current.focus();
-        // inputRef.current.blur();
         console.log("Todos changed:", todos);
     }, [todos]);
 
@@ -45,9 +45,7 @@ function Todo() {
                 placeholder="Enter task"
             />
             <button onClick={addTodo}>Add</button>
-            <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-                Toggle Theme
-            </button>
+            <button onClick={toggleTheme}>Toggle Theme</button> {/* ✅ use toggleTheme from context */}
 
             <ul>
                 {todos.map((t, i) => (
