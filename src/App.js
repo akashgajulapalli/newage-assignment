@@ -4,7 +4,7 @@ import MainComponent from "./components/MainComponent";
 
 function App() {
   return (
-    <div>
+    <div className="main-section">
       <MainComponent />
     </div>
   );
