@@ -2,12 +2,13 @@ import "./App.css";
 import React from 'react';
 import MainComponent from "./components/MainComponent";
 import { Routes, Route, Link } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<MainComponent />} />
+        {routes.map(item =><Route path={item.path} element={item.element} />)}
       </Routes>
     </div>
   );
